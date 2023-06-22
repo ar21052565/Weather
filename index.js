@@ -12,20 +12,19 @@ const data = async function (search) {
 
     if (jsondata.cod == 400) {
 
+        city.innerHTML = "";
         image.src = "error1.png";
         alert("Please Enter Location!");
-        city.innerHTML = "";
         temp.innerHTML = "";
         type.innerHTML = "";
     }
     if (jsondata.cod == 404) {
+        city.innerHTML = search;
 
         image.src = "error2.png";
-        document.querySelector('.js-img').classList('location');
-        city.innerHTML = search;
+        alert("Please Enter Right Location!");
         temp.innerHTML = "";
         type.innerHTML = "";
-        alert("Please Enter Right Location!");
     }
 
     city.innerHTML = search;
